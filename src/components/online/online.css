@@ -1,0 +1,29 @@
+.rightbarFriend {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.rightbarProfileImgcontainer {
+  margin-right: 10px;
+  position: relative;
+}
+.rightbarProfileImg {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.onlineBadge {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: limegreen;
+  border: 1px solid wheat;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}
+.rightbarUsername {
+  font-weight: 600;
+  font-size: 18px;
+}

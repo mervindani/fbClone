@@ -1,0 +1,84 @@
+.profile {
+  display: flex;
+}
+.profileRight {
+  flex: 9;
+}
+.profileCover {
+  height: 320px;
+  position: relative;
+}
+.profileCoverImg {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.profileUserImg {
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  border: 3px solid whitesmoke;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 150px;
+  margin: auto;
+}
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+}
+.profileInfoName {
+  font-size: 24px;
+  font-weight: 600;
+}
+.profileInfoDesc {
+  font-size: 18px;
+  font-weight: 400;
+}
+.profileRightBottom {
+  display: flex;
+}
+.rightBarTitle {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+.rightBarInfo {
+  margin-bottom: 30px;
+}
+.rightbarInfoItem {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.rightBarInfoKey {
+  font-weight: 540;
+  margin-right: 10px;
+  color: rgb(92, 81, 92);
+}
+.rightBarInfoValue {
+  font-weight: 400;
+}
+
+.rightBarFollowings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.rightBarFollowing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 450;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.rightBarFollowingImg {
+  height: 130px;
+  width: 130px;
+  border-radius: 25%;
+  object-fit: cover;
+}

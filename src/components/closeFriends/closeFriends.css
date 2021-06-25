@@ -1,0 +1,14 @@
+.sidebarFriend {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: large;
+  font-weight: 500;
+}
+.sidebarFriendImage {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
