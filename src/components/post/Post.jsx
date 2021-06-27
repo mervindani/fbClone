@@ -3,13 +3,19 @@ import { MoreVert } from "@material-ui/icons";
 import { format } from "timeago.js";
 
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 export default function Post({ post }) {
   const [like, setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
   const [user, setUser] = useState({});
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const { user: currentUser } = useContext(AuthContext);
+
+  useEffect(() => {
+    setIsLiked(post.likes.includes(currentUser._id));
+  }, [post.likes, currentUser._id]);
 
   useEffect(() => {
     fetchUser();
@@ -18,14 +24,22 @@ export default function Post({ post }) {
     try {
       const res = await fetch(`/users?userId=${post.userId}`);
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
       setUser(data);
     } catch (e) {
       console.log(e);
     }
   };
 
-  const handleLike = () => {
+  const handleLike = async () => {
+    try {
+      await fetch("/posts/" + post._id + "/like", {
+        method: "PUT",
+        body: { userId: currentUser._id },
+      });
+    } catch (error) {
+      console.log(error);
+    }
     setLike(isLiked ? like - 1 : like + 1);
     setIsLiked(!isLiked);
   };
